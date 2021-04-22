@@ -19,7 +19,7 @@ public class LogoActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent helloIntent = new Intent(LogoActivity.this, MainActivity.class);
+                Intent helloIntent = new Intent(LogoActivity.this, GetStartedActivity.class);
                 startActivity(helloIntent);
                 finish();
             }
