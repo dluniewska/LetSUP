@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChoiceActivity">
+
     <Button
         android:id="@+id/bWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weather for Your location"
+        android:layout_width="203dp"
+        android:layout_height="49dp"
+        android:text="Sprawdź pogodę"
         app:layout_constraintBottom_toTopOf="@+id/bStreams"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -22,7 +23,7 @@
         android:layout_width="213dp"
         android:layout_height="46dp"
         android:layout_marginBottom="316dp"
-        android:text="Live Streams"
+        android:text="Kamery na żywo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
