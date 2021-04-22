@@ -45,7 +45,7 @@ public class LiveStreamActivity extends AppCompatActivity {
 
         final ArrayList<Item> cameraList = new ArrayList<Item>();
         // Header ex. Gdansk
-        cameraList.add(new SectionItem("Tricity"));
+        cameraList.add(new SectionItem("Trójmiasto"));
         // Camera Name
         cameraList.add(new EntryItem("Molo Brzeźno"));
         cameraList.add(new EntryItem("Molo Sopot"));
@@ -56,7 +56,7 @@ public class LiveStreamActivity extends AppCompatActivity {
         cameraList.add(new SectionItem("Półwysep Helski"));
         cameraList.add(new EntryItem("Hel"));
 
-        cameraList.add(new SectionItem("Different locations"));
+        cameraList.add(new SectionItem("Inne lokalizacje"));
         cameraList.add(new EntryItem("Leba"));
         cameraList.add(new EntryItem("Stegna"));
         cameraList.add(new EntryItem("Rowy"));
@@ -100,7 +100,6 @@ public class LiveStreamActivity extends AppCompatActivity {
                         Intent intent = new Intent(LiveStreamActivity.this, StreamActivity.class);
                         Log.i("Pozycja", "Pozyjcja " + position + " nazwa " + cameraList.get(position).getTitle());
                         locationName = cameraList.get(position).getTitle();
-                        Log.i("Kateg z ucz sie,.. ", " " + locationName);
 
                         switch(cameraList.get(position).getTitle()) {
                             case "Molo Brzeźno":
