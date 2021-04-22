@@ -6,12 +6,19 @@ import android.app.ProgressDialog;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.webkit.WebView;
 import android.widget.VideoView;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StreamActivity extends AppCompatActivity {
 
-    VideoView videoView;
-    String v_url="https://imageserver.webcamera.pl/umiesc/gdansk";
+    WebView myWebView;
+    String v_url="<iframe src=\"https://static.webcamera.pl/player/gdansk_cam_77aeaf-webcamera.html?preroll-wait=true&amp;&amp;block-autoplay=true\" \n" +
+            "mozallowfullscreen=\"\" webkitallowfullscreen=\"\" allowfullscreen=\"\" scrollbars=\"no\" scrolling=\"no\"></iframe>";
     ProgressDialog pd;
 //<iframe src="https://imageserver.webcamera.pl/umiesc/gdansk" width="800" height="450" border="0" frameborder="0" scrolling="no"></iframe>
 
@@ -19,22 +26,25 @@ public class StreamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_streams);
-        videoView = (VideoView) findViewById(R.id.videoView);
-        pd = new ProgressDialog(StreamActivity.this);
-        pd.setMessage("Buffering video. Please wait");
-        pd.show();
-        Uri uri = Uri.parse(v_url);
-        videoView.setVideoURI(uri);
-        videoView.start();
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                pd.dismiss();
+        myWebView = (WebView) findViewById(R.id.webView);
+
+        if(v_url.contains("iframe")){
+            Matcher matcher = Pattern.compile("src=\"([^\"]+)\"").matcher(v_url);
+            matcher.find();
+            String src = matcher.group(1);
+            v_url=src;
+
+            try {
+                URL myURL = new URL(src);
+                myWebView.loadUrl(src);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
             }
-        });
+        }else {
+
+            myWebView.loadDataWithBaseURL(null, "<style>img{display: inline;height: auto;max-width: 100%;}</style>"
+                    + myWebView, "text/html", "UTF-8", null);}
+
     }
-
-
-
-
 }
