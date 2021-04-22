@@ -5,7 +5,6 @@ package com.example.letsup;
         import android.os.Bundle;
         import android.text.Editable;
         import android.text.TextWatcher;
-        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
@@ -24,23 +23,15 @@ package com.example.letsup;
         import java.util.Locale;
 
 public class LiveStreamActivity extends AppCompatActivity {
-    private static String nazwaKategorii;
-    //    public   String nazwaKategorii2;
+    private static String locationName;
     private ListView lvCategory;
     private EditText edtSearch;
     private boolean flagaFilter=true;
+    public static String sharedValue = null;
 
-
-
-    public static String getNazwaKategorii(){
-        return  nazwaKategorii;
+    public static String getLocationName(){
+        return locationName;
     }
-
-//
-//    public  String getNazwaKategorii2() {
-//        return nazwaKategorii2;
-//    }
-
 
 
     @Override
@@ -51,18 +42,28 @@ public class LiveStreamActivity extends AppCompatActivity {
         edtSearch = (EditText) findViewById(R.id.edtSearch);
         lvCategory = (ListView) findViewById(R.id.lvCategory);
 
-        final ArrayList<Item> countryList = new ArrayList<Item>();
-        // Header
-      //  countryList.add(new SectionItem("English A1"));
-        // Category Name
-        countryList.add(new EntryItem("Molo Brzeźno"));
-        countryList.add(new EntryItem("Molo Sopot"));
+        final ArrayList<Item> cameraList = new ArrayList<Item>();
+        // Header ex. Gdansk
+        cameraList.add(new SectionItem("Tricity"));
+        // Camera Name
+        cameraList.add(new EntryItem("Molo Brzeźno"));
+        cameraList.add(new EntryItem("Molo Sopot"));
+        cameraList.add(new EntryItem("Gdynia"));
+        cameraList.add(new EntryItem("Port Morski Gdynia"));
+        cameraList.add(new EntryItem("Gdańsk Motława"));
 
+        cameraList.add(new SectionItem("Półwysep Helski"));
+        cameraList.add(new EntryItem("Jurata"));
+        cameraList.add(new EntryItem("Hel"));
 
+        cameraList.add(new SectionItem("Different locations"));
+        cameraList.add(new EntryItem("Leba"));
+        cameraList.add(new EntryItem("Stegna"));
+        cameraList.add(new EntryItem("Rowy"));
 
 
         // set adapter
-        final CategoryAdapter adapter = new CategoryAdapter(this, countryList);
+        final CategoryAdapter adapter = new CategoryAdapter(this, cameraList);
         lvCategory.setAdapter(adapter);
         lvCategory.setTextFilterEnabled(true);
 
@@ -94,17 +95,22 @@ public class LiveStreamActivity extends AppCompatActivity {
 
                 if(flagaFilter==true) {
 
-                    if (countryList.get(position).isSection() == false) {
+                    if (cameraList.get(position).isSection() == false) {
 
                         Intent intent = new Intent(LiveStreamActivity.this, StreamActivity.class);
-                        Log.i("Pozycja", "Pozyjcja " + position + " nazwa " + countryList.get(position).getTitle());
-                        nazwaKategorii = countryList.get(position).getTitle();
-                        //         nazwaKategorii2 = countryList.get(position).getTitle();
-                        Log.i("Kateg z ucz sie,.. ", " " + nazwaKategorii);
+                //        Log.i("Pozycja", "Pozyjcja " + position + " nazwa " + cameraList.get(position).getTitle());
+                        locationName = cameraList.get(position).getTitle();
+               //      Log.i("Kateg z ucz sie,.. ", " " + nazwaKategorii);
+
+
+                        sharedValue ="<iframe src=\"https://imageserver.webcamera.pl/umiesc/gdansk-motlawa\" width=\"800\"" +
+                                " height=\"450\" border=\"0\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+
                         startActivity(intent);
-                    } else if (countryList.get(position).isSection() == true) {
+
+                    } else if (cameraList.get(position).isSection() == true) {
                         Context context = getApplicationContext();
-                        CharSequence text = "Please, click category not section!";
+                        CharSequence text = "Please, click location not section!";
                         int duration = Toast.LENGTH_SHORT;
 
                         Toast toast = Toast.makeText(context, text, duration);
@@ -118,15 +124,10 @@ public class LiveStreamActivity extends AppCompatActivity {
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-
-
                 }
-
             }
 
         });
-
-
 
     }
 

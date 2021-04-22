@@ -17,16 +17,17 @@ import java.util.regex.Pattern;
 public class StreamActivity extends AppCompatActivity {
 
     WebView myWebView;
-    String v_url="<iframe src=\"https://static.webcamera.pl/player/gdansk_cam_77aeaf-webcamera.html?preroll-wait=true&amp;&amp;block-autoplay=true\" \n" +
-            "mozallowfullscreen=\"\" webkitallowfullscreen=\"\" allowfullscreen=\"\" scrollbars=\"no\" scrolling=\"no\"></iframe>";
+   // String v_url="<iframe src=\"https://imageserver.webcamera.pl/umiesc/gdansk\" width=\"800\" height=\"450\" " + "border=\"0\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+    String v_url = LiveStreamActivity.sharedValue;
     ProgressDialog pd;
-//<iframe src="https://imageserver.webcamera.pl/umiesc/gdansk" width="800" height="450" border="0" frameborder="0" scrolling="no"></iframe>
+    //<iframe src="https://imageserver.webcamera.pl/umiesc/gdansk" width="800" height="450" border="0" frameborder="0" scrolling="no"></iframe>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_streams);
         myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.getSettings().setDomStorageEnabled(true);
 
         if(v_url.contains("iframe")){
             Matcher matcher = Pattern.compile("src=\"([^\"]+)\"").matcher(v_url);
