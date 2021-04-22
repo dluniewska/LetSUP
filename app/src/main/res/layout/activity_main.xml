@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/getStartedB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ITS ALIVE!!!"
-        android:textSize="36sp"
+        android:layout_marginBottom="155dp"
+        android:text="GET STARTED"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="331dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
