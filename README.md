@@ -22,6 +22,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 * OpenWeatherMap API
 * HTML5
 * JSON
+* biblioteka HTTP Volley
 
 ## Zakres funkcjonalności 
 
@@ -116,11 +117,113 @@ setContentView(R.layout.activity_streams);
 
 
 #### **Pogoda dla wybranej lokalizacji**
-    - wyszukanie lokalizacji po nazwie 
-    - wyświeltlanie xyz
+* **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
+```java
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_getstarted);
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        if (ActivityCompat.checkSelfPermission(GetStartedActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            getLocation();
+        } else
+            ActivityCompat.requestPermissions(GetStartedActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44
+            );
 
+    }
+        private void getLocation() {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                Location location = task.getResult();
+                if (location != null) {
+                    try {
+                        Geocoder geocoder = new Geocoder(GetStartedActivity.this, Locale.getDefault());
+
+                        List<Address> addressList = geocoder.getFromLocation(
+                                location.getLatitude(), location.getLongitude(), 1);
+                        cityName = addressList.get(0).getLocality().toString();
+                        Log.i("To jest miasto", "miasto:" + cityName);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+    }
+    
+    
+```
+* **wyświetlenie lokalizacji dla wprowadzonego miasta** 
+```java
+    public void getWeather(View view) {
+        String tempURL = "";
+        String city = cityET.getText().toString().trim();
+        if(city.equals("")) {
+            resultTV.setText("Pole nie może być puste");
+        } else {
+            tempURL = url + "?q=" + city + "&lang=pl&units=metric&appid=" + apiKey;
+
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, tempURL, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    //Log.d("response", response);
+                    String output ="";
+                    try {
+                        JSONObject jsonResponse = new JSONObject(response);
+                        JSONArray jsonArray = jsonResponse.getJSONArray("weather");
+                        JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
+                        String weather = jsonObjectWeather.getString("main");
+                        String description = jsonObjectWeather.getString("description");
+                        JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
+                        double temp = jsonObjectMain.getDouble("temp");
+                        double feelslike = jsonObjectMain.getDouble("feels_like");
+                        float pressure = jsonObjectMain.getInt("pressure");
+                        int humidity = jsonObjectMain.getInt("humidity");
+                        JSONObject jsonObjectWind = jsonResponse.getJSONObject("wind");
+                        String wind = jsonObjectWind.getString("speed");
+                        JSONObject jsonObjectClouds = jsonResponse.getJSONObject("clouds");
+                        String clouds = jsonObjectClouds.getString("all");
+                        JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
+                        String cityName = jsonResponse.getString("name");
+                        resultTV.setTextColor(Color.BLACK);
+                        output += "Aktualnie pogoda wygląda następująco: "
+                                + "\n Temperatura: " + df.format(temp) + "°C"
+                                + "\n Odczuwalna: " + df.format(feelslike) + "°C"
+                                + "\n Wilgotność: " + humidity + "%"
+                                + "\n Szczegóły: " + description
+                                + "\n Prędkość wiatru: " + wind + "m/s"
+                                + "\n Zachmurzenie: " + clouds + "%"
+                                + "\n Ciśnienie: " + pressure + "hPa";
+                        resultTV.setText(output);
+
+                    } catch (JSONException e) {;
+                        e.printStackTrace();
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(stringRequest);
+        }
+    }
+```
 
 
 ## Ilustracje
