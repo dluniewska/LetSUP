@@ -24,8 +24,8 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 ## Zakres funkcjonalności 
 
-- **Kamery na żywo**
-    - lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
+#### **Kamery na żywo**
+**lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
  ```java   
  final ArrayList<Item> cameraList = new ArrayList<Item>();
         // Header ex. Gdansk
@@ -34,10 +34,49 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
         cameraList.add(new EntryItem("Molo Brzeźno"));
         cameraList.add(new EntryItem("Molo Sopot"));
         cameraList.add(new EntryItem("Gdynia"));
- ``` 
-    - po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
-    - filtrowanie i wyszukiwanie lokalizacji po nazwie 
-- **Pogoda dla wybranej lokalizacji**
+```
+**po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
+```java
+Intent intent = new Intent(LiveStreamActivity.this, StreamActivity.class);
+                        locationName = cameraList.get(position).getTitle();
+
+                        switch(cameraList.get(position).getTitle()) {
+                            case "Molo Brzeźno":
+                                sharedValue ="<iframe src=\"https://static.webcamera.pl/player/gdansk_cam_77aeaf-webcamera.html?preroll-wait=true&amp;&amp;block-autoplay=true\" \n" +
+                                        "mozallowfullscreen=\"\" webkitallowfullscreen=\"\" allowfullscreen=\"\" scrollbars=\"no\" scrolling=\"no\"></iframe>";
+                                break;
+                            case "Molo Sopot":
+                                sharedValue ="<iframe src=\"https://imageserver.webcamera.pl/umiesc/sopot-molo\" " +
+                                            "width=\"800\" height=\"450\" border=\"0\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+                                break;
+```
+```java
+String v_url = LiveStreamActivity.sharedValue;
+setContentView(R.layout.activity_streams);
+        myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.getSettings().setDomStorageEnabled(true);
+
+        if(v_url.contains("iframe")){
+            Matcher matcher = Pattern.compile("src=\"([^\"]+)\"").matcher(v_url);
+            matcher.find();
+            String src = matcher.group(1);
+            v_url=src;
+            
+            try {
+                URL myURL = new URL(src);
+                myWebView.loadUrl(src);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }else {
+
+            myWebView.loadDataWithBaseURL(null, "<style>img{display: inline;height: auto;max-width: 100%;}</style>"
+                    + myWebView, "text/html", "UTF-8", null);}
+```
+
+**filtrowanie i wyszukiwanie lokalizacji po nazwie 
+##### **Pogoda dla wybranej lokalizacji**
     - wyszukanie lokalizacji po nazwie 
     - wyświeltlanie xyz
 
