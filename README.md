@@ -229,8 +229,17 @@ setContentView(R.layout.activity_streams);
 ## Ilustracje
 
 <p>
-    <img src="https://user-images.githubusercontent.com/35393983/115919619-5ccf0000-a479-11eb-8283-8f03f6445d85.JPG" alt="Splash window"/>
+    <img src="https://user-images.githubusercontent.com/35393983/115939618-ef35ca80-a49e-11eb-90d1-a5f553c9bfbb.JPG" alt="Splash window"/>
     <br>
-    <em>Fig. 1: Splash window</em>
+    <em>Fig. 1: Widok startowy</em>
 </p>
+<p>
+    <img src="https://user-images.githubusercontent.com/35393983/115939515-9cf4a980-a49e-11eb-869e-21a551619a32.JPG"/>
+    <br>
+    <em>Fig. 2: Lista z kamerami. Filtrowanie listy. Widok z kamery. </em>
+</p>
+
+
+
+
 
