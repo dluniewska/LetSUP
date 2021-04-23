@@ -11,5 +11,12 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 ## Technologie
 Projekt jest stworzony z wykorzystaniem:
-*Android Studio
-*Java
+* Android 11.0
+* Java 8
+* WheatherAPI
+* HTML5
+
+## Zakres funkcjonalności
+
+## Ilustracje
+
