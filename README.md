@@ -22,15 +22,28 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 * WheatherAPI
 * HTML5
 
-## Zakres funkcjonalności
+## Zakres funkcjonalności 
 
 - **Kamery na żywo**
     - lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
+ ```java   
+ final ArrayList<Item> cameraList = new ArrayList<Item>();
+        // Header ex. Gdansk
+        cameraList.add(new SectionItem("Trójmiasto"));
+        // Camera Name
+        cameraList.add(new EntryItem("Molo Brzeźno"));
+        cameraList.add(new EntryItem("Molo Sopot"));
+        cameraList.add(new EntryItem("Gdynia"));
+ ``` 
     - po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
     - filtrowanie i wyszukiwanie lokalizacji po nazwie 
 - **Pogoda dla wybranej lokalizacji**
     - wyszukanie lokalizacji po nazwie 
     - wyświeltlanie xyz
+
+
+
+
 
 ## Ilustracje
 
