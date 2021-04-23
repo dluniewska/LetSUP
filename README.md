@@ -16,7 +16,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 **Celem biznesowym** jest stworzenie aplikacji jako funkcjonalnego narzędzia dla społeczności Stand Up Paddleboard, które umożliwi zapoznanie się z dokładnymi warunkami pogodowymi, aby mogli oni odpowiednio dostosować swoja jednostkę treningowa do wymagań jakie panują na wodzie. Natomiast **celem naukowym** jest rozwiniecie umiejętności w technologii Android z wykorzystaniem języka obiektowego Java wraz zastosowanie zewnętrznego API **_nazwaAPI_**. 
 
 ## Technologie
-Projekt jest stworzony z wykorzystaniem:
+**Projekt jest stworzony z wykorzystaniem:**
 * Android 11.0
 * Java 8
 * WheatherAPI
@@ -24,11 +24,11 @@ Projekt jest stworzony z wykorzystaniem:
 
 ## Zakres funkcjonalności
 
-- Kamery na żywo
+- **Kamery na żywo**
     - lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
     - po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
     - filtrowanie i wyszukiwanie lokalizacji po nazwie 
-- Pogoda dla wybranej lokalizacji
+- **Pogoda dla wybranej lokalizacji**
     - wyszukanie lokalizacji po nazwie 
     - wyświeltlanie xyz
 
