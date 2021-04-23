@@ -24,8 +24,8 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 ## Zakres funkcjonalności 
 
-#### **Kamery na żywo**
-**lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
+### **Kamery na żywo**
+* **lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska**
  ```java   
  final ArrayList<Item> cameraList = new ArrayList<Item>();
         // Header ex. Gdansk
@@ -35,7 +35,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
         cameraList.add(new EntryItem("Molo Sopot"));
         cameraList.add(new EntryItem("Gdynia"));
 ```
-**po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
+* **po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela**
 ```java
 Intent intent = new Intent(LiveStreamActivity.this, StreamActivity.class);
                         locationName = cameraList.get(position).getTitle();
@@ -75,8 +75,46 @@ setContentView(R.layout.activity_streams);
                     + myWebView, "text/html", "UTF-8", null);}
 ```
 
-**filtrowanie i wyszukiwanie lokalizacji po nazwie 
-##### **Pogoda dla wybranej lokalizacji**
+* **filtrowanie i wyszukiwanie lokalizacji po nazwie** 
+```java
+        protected FilterResults performFiltering(CharSequence constraint) {
+        
+                    FilterResults results = new FilterResults();
+                    ArrayList<Item> filteredArrayList = new ArrayList<Item>();
+
+                    if(originalItem == null || originalItem.size() == 0)
+                    {
+                        originalItem = new ArrayList<Item>(item);
+                    }
+                   
+                    if(constraint == null && constraint.length() == 0)
+                    {
+                        results.count = originalItem.size();
+                        results.values = originalItem;
+                    }
+                    else
+                    {
+                        constraint = constraint.toString().toLowerCase(Locale.ENGLISH);
+                        for (int i = 0; i < originalItem.size(); i++)
+                        {
+                            String title = originalItem.get(i).getTitle().toLowerCase(Locale.ENGLISH);
+                            if(title.contains(constraint.toString()))
+                            {
+                                filteredArrayList.add(originalItem.get(i));
+                            }
+                        }
+                        results.count = filteredArrayList.size();
+                        results.values = filteredArrayList;
+                    }
+                    return results;
+                }
+            };
+
+```
+
+
+
+#### **Pogoda dla wybranej lokalizacji**
     - wyszukanie lokalizacji po nazwie 
     - wyświeltlanie xyz
 
