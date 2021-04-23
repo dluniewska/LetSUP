@@ -19,7 +19,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 **Projekt jest stworzony z wykorzystaniem:**
 * Android 11.0
 * Java 8
-* WheatherAPI
+* OpenWeatherMap API
 * HTML5
 * JSON
 
