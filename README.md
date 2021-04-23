@@ -21,6 +21,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 * Java 8
 * WheatherAPI
 * HTML5
+* JSON
 
 ## Zakres funkcjonalności 
 
@@ -123,4 +124,10 @@ setContentView(R.layout.activity_streams);
 
 
 ## Ilustracje
+
+<p>
+    <img src="https://user-images.githubusercontent.com/35393983/115919619-5ccf0000-a479-11eb-8283-8f03f6445d85.JPG" alt="Splash window"/>
+    <br>
+    <em>Fig. 1: Splash window</em>
+</p>
 
