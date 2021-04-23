@@ -1,6 +1,12 @@
 # Let's SUP 
 #### Aplikacja udostępniajaca aktualna pogodę dla wskazanej miejscowości z możliwościa obejrzenia kamerek na żywo w wybranych lokalizacjach 
 
+## Spis treści 
+* [Wprowadzenie](#wprowadzenie)
+* [Technologie](#technologie)
+* [Zakres funkcjonalności](#zakres-funkcjonalności)
+* [Ilustracje](#ilustracje)
+
 ## Wprowadzenie 
  
 Aplikacja udostępniająca warunki pogodowe przeznaczona dla osób pływających na stand-up paddle board, choć aplikacja jest skierowana szczególnie do tej grupy z powodzeniem z aplikacji mogą korzystać inni wodni sportowcy jak kajakarze, windsuperzy, którzy chcą sprawdzić warunki pogodowe na danym obszarze.<br/>
@@ -17,6 +23,14 @@ Projekt jest stworzony z wykorzystaniem:
 * HTML5
 
 ## Zakres funkcjonalności
+
+- Kamery na żywo
+    - lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
+    - po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
+    - filtrowanie i wyszukiwanie lokalizacji po nazwie 
+- Pogoda dla wybranej lokalizacji
+    - wyszukanie lokalizacji po nazwie 
+    - wyświeltlanie xyz
 
 ## Ilustracje
 
