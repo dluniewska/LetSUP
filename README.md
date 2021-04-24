@@ -312,7 +312,9 @@ setContentView(R.layout.activity_streams);
                     feelslikeVal.setText(feelslike + "°C");
                     humidityVal.setText(humidity + "%");
                     windVal.setText(wind + "m/s");
-                    Log.i("pupa", description);
+                  }
+               }
+            }
 
 ```
 
@@ -334,18 +336,6 @@ switch (weather) {
                             break;
                         case "Snow":
                             getStartedCL.setBackground(getDrawable(R.drawable.snow));
-                            break;
-                        case "Mist":
-                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
-                            break;
-                        case "Smoke":
-                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
-                            break;
-                        case "Haze":
-                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
-                            break;
-                        case "Squall":
-                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
                             break;
                         case "Fog":
                             getStartedCL.setBackground(getDrawable(R.drawable.fog));
