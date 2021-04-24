@@ -33,8 +33,8 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 * [**filtrowanie i wyszukiwanie lokalizacji po nazwie**](**filtrowanie-i-wyszukiwanie-lokalizacji-po-nazwie**) 
 
 #### **Pogoda dla wybranej lokalizacji**
-* **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
-* **wyświetlenie lokalizacji dla wprowadzonego miasta** 
+* [**pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji**](**pobranie-lokalizacji-(miasta)-urzadzenia-do-zmiennej-w-celu-załadowania-pogody-dla-aktualnej-lokalizacji**) 
+* [**wyświetlenie lokalizacji dla wprowadzonego miasta**](**wyświetlenie-lokalizacji-dla-wprowadzonego-miasta**) 
 
 ## Przykład kodu dla funkcjonalności 
 
