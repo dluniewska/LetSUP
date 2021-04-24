@@ -134,55 +134,9 @@ setContentView(R.layout.activity_streams);
 
 
 
-#### **pogoda dla wybranej lokalizacji**
-* **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
-```java
-  @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_getstarted);
+### **Pogoda dla wybranej lokalizacji**
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-
-        if (ActivityCompat.checkSelfPermission(GetStartedActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            getLocation();
-        } else
-            ActivityCompat.requestPermissions(GetStartedActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44
-            );
-
-    }
-        private void getLocation() {
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                Location location = task.getResult();
-                if (location != null) {
-                    try {
-                        Geocoder geocoder = new Geocoder(GetStartedActivity.this, Locale.getDefault());
-
-                        List<Address> addressList = geocoder.getFromLocation(
-                                location.getLatitude(), location.getLongitude(), 1);
-                        cityName = addressList.get(0).getLocality().toString();
-                        Log.i("To jest miasto", "miasto:" + cityName);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            }
-        });
-    }
-    
-    
-```
-* **wyświetlenie lokalizacji dla wprowadzonego miasta** 
+* **wyświetlenie pogody dla wprowadzonego miasta** 
 ```java
     public void getWeather(View view) {
         String tempURL = "";
@@ -243,7 +197,54 @@ setContentView(R.layout.activity_streams);
     }
 ```
 ### **Pogoda dla aktualnej lokalizacji użytkownika**
+* **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
+```java
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_getstarted);
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(GetStartedActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            getLocation();
+        } else
+            ActivityCompat.requestPermissions(GetStartedActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44
+            );
+
+    }
+        private void getLocation() {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                Location location = task.getResult();
+                if (location != null) {
+                    try {
+                        Geocoder geocoder = new Geocoder(GetStartedActivity.this, Locale.getDefault());
+
+                        List<Address> addressList = geocoder.getFromLocation(
+                                location.getLatitude(), location.getLongitude(), 1);
+                        cityName = addressList.get(0).getLocality().toString();
+                        Log.i("To jest miasto", "miasto:" + cityName);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+    }
+    
+    
+```
+* **załadowania pogody dla aktualnej lokalizacji** 
 ```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
