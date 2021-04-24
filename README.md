@@ -236,7 +236,128 @@ setContentView(R.layout.activity_streams);
         }
     }
 ```
+#### **Pogoda dla aktualnej lokalizacji użytkownika**
 
+```java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_getstarted);
+        descriptionVal = findViewById(R.id.descriptionVal);
+        tempVal = findViewById(R.id.tempVal);
+        feelslikeVal = findViewById(R.id.feelslikeVal);
+        humidityVal = findViewById(R.id.humidityVal);
+        windVal = findViewById(R.id.windVal);
+        getStartedCL = findViewById(R.id.getStartedCL);
+
+
+        checkLocationIsEnabled();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(GetStartedActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            getLocation();
+        } else
+            ActivityCompat.requestPermissions(GetStartedActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44
+            );
+
+
+        bGetStarted = findViewById(R.id.bGetStarted);
+
+        bGetStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i = new Intent(GetStartedActivity.this, ChoiceActivity.class);
+                startActivity(i);
+            }
+        });
+
+        String tempURL = "";
+        tempURL = url + "?q=" + cityName + "&lang=pl&units=metric&appid=" + apiKey;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, tempURL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Log.d("response", response);
+                String output = "";
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    JSONArray jsonArray = jsonResponse.getJSONArray("weather");
+                    JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
+                    String weather = jsonObjectWeather.getString("main");
+                    String description = jsonObjectWeather.getString("description");
+                    JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
+                    double temp = jsonObjectMain.getDouble("temp");
+                    double feelslike = jsonObjectMain.getDouble("feels_like");
+                    float pressure = jsonObjectMain.getInt("pressure");
+                    int humidity = jsonObjectMain.getInt("humidity");
+                    JSONObject jsonObjectWind = jsonResponse.getJSONObject("wind");
+                    String wind = jsonObjectWind.getString("speed");
+                    JSONObject jsonObjectClouds = jsonResponse.getJSONObject("clouds");
+                    String clouds = jsonObjectClouds.getString("all");
+                    JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
+                    String cityName = jsonResponse.getString("name");
+                    descriptionVal.setText(description);
+                    tempVal.setText(temp + "°C");
+                    feelslikeVal.setText(feelslike + "°C");
+                    humidityVal.setText(humidity + "%");
+                    windVal.setText(wind + "m/s");
+                    Log.i("pupa", description);
+
+```
+
+* **Zmiana tła stosownie do aktualnej pogody** 
+
+```java
+switch (weather) {
+                        case "Clear":
+                            getStartedCL.setBackground(getDrawable(R.drawable.sun));
+                            break;
+                        case "Clouds":
+                            getStartedCL.setBackground(getDrawable(R.drawable.clouds));
+                            break;
+                        case "Drizzle":
+                            getStartedCL.setBackground(getDrawable(R.drawable.rain));
+                            break;
+                        case "Thunderstorm":
+                            getStartedCL.setBackground(getDrawable(R.drawable.thunder));
+                            break;
+                        case "Snow":
+                            getStartedCL.setBackground(getDrawable(R.drawable.snow));
+                            break;
+                        case "Mist":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Smoke":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Haze":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Squall":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Fog":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Sand":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Dust":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Ash":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        case "Tornado":
+                            getStartedCL.setBackground(getDrawable(R.drawable.fog));
+                            break;
+                        default:
+                            getStartedCL.setBackground(getDrawable(R.drawable.flower));
+                    }
+
+```
 
 ## Ilustracje
 
