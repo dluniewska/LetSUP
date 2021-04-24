@@ -246,12 +246,28 @@ setContentView(R.layout.activity_streams);
     <em>Fig. 1: Widok startowy</em>
 </p>
 <p>
+    <img src="https://user-images.githubusercontent.com/35393983/115952372-cd136b00-a4e5-11eb-8ab4-544bfdba5cc9.png"/>
+    <br>
+    <em>Fig. 2: Aktualna pogoda dla lokalizacji, w której znajduje się urzadzenie. Grafika zmienia się w zależności od waruknów pogodowych. </em>
+</p>
+<p>
+    <img src="https://user-images.githubusercontent.com/35393983/115952326-90e00a80-a4e5-11eb-8a41-c8c808bd7063.png"/>
+    <br>
+    <em>Fig. 3: Tła dla Fig. 2 </em>
+</p>
+<p>
+    <img src="https://user-images.githubusercontent.com/35393983/115952435-2e3b3e80-a4e6-11eb-8458-cd4f6d2d34c5.png"/>
+    <br>
+    <em>Fig. 4: Wybór opcji. </em>
+</p>
+<p>
+    <img src="https://user-images.githubusercontent.com/35393983/115952513-a73a9600-a4e6-11eb-9b15-b114645ddfda.JPG"/>
+    <br>
+    <em>Fig. 5: Wybieranie pogody dla zadanej lokalizacji.  </em>
+</p>
+<p>
     <img src="https://user-images.githubusercontent.com/35393983/115939515-9cf4a980-a49e-11eb-869e-21a551619a32.JPG"/>
     <br>
-    <em>Fig. 2: Lista z kamerami. Filtrowanie listy. Widok z kamery. </em>
+    <em>Fig. 6: Lista z kamerami. Filtrowanie listy. Widok z kamery. </em>
 </p>
-
-
-
-
 
