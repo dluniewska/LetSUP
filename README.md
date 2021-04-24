@@ -34,11 +34,13 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 
 ### **Pogoda dla wybranej lokalizacji**
-* pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji
 * wyświetlenie lokalizacji dla wprowadzonego miasta
 
 ### **Pogoda dla aktualnej lokalizacji użytkownika**
+* pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji
 * Zmiana tła stosownie do aktualnej pogody
+* załadowania pogody dla aktualnej lokalizacji** 
+
 
 
 
