@@ -28,13 +28,19 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 
 ### **Kamery na żywo**
-* [**lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska**](#lista-lokalizacji-z-kamerami-na-żywo-podzielona-w-sekcje-np.-Trójmiasto-zawiera-kamery-z-Gdyni,-Spotu,-Gdańska)
-* [**po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela**](#po-wybraniu-lokalizacji-jest-właczany-stream-z-kamery-poprzez-WebView-->-na-portalu-właściciela)
-* [**filtrowanie i wyszukiwanie lokalizacji po nazwie**](#filtrowanie-i-wyszukiwanie-lokalizacji-po-nazwie) 
+* **lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska**
+* **po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela**
+* **filtrowanie i wyszukiwanie lokalizacji po nazwie** 
 
-#### **Pogoda dla wybranej lokalizacji**
-* [**pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji**](#pobranie-lokalizacji-(miasta)-urzadzenia-do-zmiennej-w-celu-załadowania-pogody-dla-aktualnej-lokalizacji) 
-* [**wyświetlenie lokalizacji dla wprowadzonego miasta**](#wyświetlenie-lokalizacji-dla-wprowadzonego-miasta) 
+
+### **Pogoda dla wybranej lokalizacji**
+* **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
+* **wyświetlenie lokalizacji dla wprowadzonego miasta** 
+
+### **Pogoda dla aktualnej lokalizacji użytkownika**
+* **Zmiana tła stosownie do aktualnej pogody** 
+
+
 
 ## Przykład kodu dla funkcjonalności 
 
@@ -128,7 +134,7 @@ setContentView(R.layout.activity_streams);
 
 
 
-#### **Pogoda dla wybranej lokalizacji**
+#### **pogoda dla wybranej lokalizacji**
 * **pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji** 
 ```java
   @Override
@@ -236,7 +242,7 @@ setContentView(R.layout.activity_streams);
         }
     }
 ```
-#### **Pogoda dla aktualnej lokalizacji użytkownika**
+### **Pogoda dla aktualnej lokalizacji użytkownika**
 
 ```java
     @Override
