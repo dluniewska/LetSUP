@@ -13,7 +13,18 @@ Aplikacja udostępniająca warunki pogodowe przeznaczona dla osób pływających
 <br/>
 Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, prędkość wiatru, stan zachmurzenia nieba, wysokość fal. Dla wielu miejsc nad morzem Bałtyckim (np. molo w Brzeźnie, Motława, molo w Sopocie, Hel) będzie możliwe obejrzeć live stream, który jeszcze bardziej pozwoli się przygotować na sesję treningową. 
 
-**Celem biznesowym** jest stworzenie aplikacji jako funkcjonalnego narzędzia dla społeczności Stand Up Paddleboard, które umożliwi zapoznanie się z dokładnymi warunkami pogodowymi, aby mogli oni odpowiednio dostosować swoja jednostkę treningowa do wymagań jakie panują na wodzie. Natomiast **celem naukowym** jest rozwiniecie umiejętności w technologii Android z wykorzystaniem języka obiektowego Java wraz z zastosowaniem zewnętrznego API **_nazwaAPI_**. 
+**Celem biznesowym** jest stworzenie aplikacji jako funkcjonalnego narzędzia dla społeczności Stand Up Paddleboard, które umożliwi zapoznanie się z dokładnymi warunkami pogodowymi, aby mogli oni odpowiednio dostosować swoja jednostkę treningowa do wymagań jakie panują na wodzie. Natomiast **celem naukowym** jest rozwiniecie umiejętności w technologii Android z wykorzystaniem języka obiektowego Java wraz z zastosowaniem zewnętrznego API **OpenWeatherMap**. 
+
+## Prawa autorskie
+
+**Licencja:** CPL (Common Public License)
+
+**Uzasadnienie:** Jako zespół zdecydowałyśmy się na licencję wolnego oprogramowania. Licencja CPL jest podobna do znanej licencji GPL, jednakże zakazuje wykorzystania kodu źródłowego w taki sposób, aby korzystać z niego w sposób komercyjny i czerpać z niego korzyści finansowe. 
+
+**Autorzy:**
+1. Daria Łuniewsk
+2. Natalia Gościnna
+3. Paulina Ciach
 
 ## Technologie
 **Projekt jest stworzony z wykorzystaniem:**
