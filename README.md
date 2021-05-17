@@ -28,7 +28,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 
 ### **Kamery na żywo**
-* [lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska](#pogoda-dla-wybranej-lokalizacji)
+* lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
 * po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
 * filtrowanie i wyszukiwanie lokalizacji po nazwie
 
