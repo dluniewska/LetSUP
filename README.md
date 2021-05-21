@@ -27,7 +27,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 3. Paulina Ciach
 
 <p>
-    ![image](https://user-images.githubusercontent.com/72083113/119167662-5a53cc00-ba60-11eb-9207-12a067b56f40.png)
+    <img src="https://user-images.githubusercontent.com/72083113/119167662-5a53cc00-ba60-11eb-9207-12a067b56f40.png" />
     <br>
     <em>Powyższa formuła dodana została do wszystkich klas i widoków</em>
 </p>
