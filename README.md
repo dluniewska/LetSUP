@@ -8,6 +8,7 @@
 * [Architektura systemu i oprogramowania](#architektura-systemu-i-oprogramowania)
 * [Zakres wdrożonych funkcjonalności](#zakres-wdrożonych-funkcjonalności)
 * [Przykład kodu dla funkcjonalności](#przykład-kodu-dla-funkcjonalności)
+* [Testy](testy)
 * [Ilustracje](#ilustracje)
 
 ## Wprowadzenie 
@@ -39,39 +40,53 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 ## Specyfikacja wymagań
 ### **Wymagania funkcjonalne**			
 
-| **Id** | **Nazwa**                                      | **Opis**                                         | **Priorytet**     |
-|----|--------------------------------------------|----------------------------------------------|---------------|
-| 1  | Obrazek startowy                           | Wyświetla się przez 3s                       | 1- wymagane   |
-| 2  | Okno główne                                | Wiget pogodowy, guzik "get started"          | 1- wymagane   |
-| 3  | Okno nr 2                                  | Guziki "check weather for your location"     | 1- wymagane   |
-| 4  | Okno nr 3                                  | Guziki "check live stream"                   | 1- wymagane   |
-| 5  | Zakładka "check live stream"               | Lista z live streami                         | 1- wymagane   |
-| 6  | Zakładka "check live stream"               | Wybranie live stream z listy                 | 1- wymagane   |
-| 7  | Zakładka "check weather for your location" | Zakłdka do wyszukania pogody w danym miejscu | 1- wymagane   |
-| 8  | Zakładka "check weather for your location" | ikonki przy warkunkach pogodowych            | 2-przydatne   |
-| 9  | Zakładka "check weather for your location" | Temperatura odczuwalna                       | 2-przydatne   |
-| 10 | Zakładka "check weather for your location" | Temperatura max/min                          | 1- wymagane   |
-| 11 | Zakładka "check weather for your location" | Wilgotność                                   | 2-przydatne   |
-| 12 | Zakładka "check weather for your location" | Ciśnienie                                    | 3-opcjonalne  |
-| 13 | Zakładka "check weather for your location" | Widoczność                                   | 1- wymagane   |
-| 14 | Zakładka "check weather for your location" | Wiatr                                        | 1- wymagane   |
-| 15 | Zakładka "check weather for your location" | Indeks UV                                    | 2-przydatne   |
-| 16 | Zakładka "check weather for your location" | Wysokość fal                                 | 2-przydatne   |
-| 14 | Ikonka powrotu                             | Powrot do poprzedniej strony "custom button" | 3-opcjonalne  |
-| 15 | Dziennik z plywania                        | osobna zakładka                              | 3-opcjonalne  |
+**Priorytet:**
+* 1- wymagane
+* 2-przydatne
+* 3-opcjonalne
+
+
+| Id | Nazwa                       | Opis                                           | Priorytet |
+|----|-----------------------------|------------------------------------------------|-----------|
+| 1  | Obrazek startowy            | Wyświetla się przez 3s                         | 1         |
+| 2  | Okno nr 1                   | Wiget pogodowy, guzik "ZACZYNAMY"              | 1         |
+| 3  | Okno nr 1                   | Pogoda dla aktualnej lokalizacji               | 1         |
+| 4  | Okno nr 1                   | Zmina tła zależna od pogody                    | 1         |
+| 5  | Okno nr 2                   | Guziki "sprawdź pogodę"                        | 1         |
+| 6  | Okno nr 2                   | Guziki "kamery na żywo"                        | 1         |
+| 7  | Okno nr 3 "kamery na żywo"  | Lista z live streami                           | 1         |
+| 8  | Okno nr 3 "kamery na żywo"  | Sekcje z obszarami                             | 1         |
+| 9  | Okno nr 3 "kamery na żywo"  | Wyszukiwarka                                   | 1         |
+| 10 | Okno nr 3 "kamery na żywo"  | Kliknięcie w lokalizacje wyświetla live stream | 1         |
+| 11 | Okno nr 3 "kamery na żywo"  | Wybranie live stream z listy                   | 1         |
+| 12 | Okno nr 4  "sprawdź pogodę" | wyszukania pogody w wybranym miejscu           | 1         |
+| 13 | Okno nr 4  "sprawdź pogodę" | Temperatura max/min                            | 1         |
+| 15 | Okno nr 4  "sprawdź pogodę" | Wiatr                                          | 1         |
+| 18 | Okno nr 4  "sprawdź pogodę" | Szczegóły np. chmury, mgła itp.                | 1         |
+| 19 | Okno nr 4  "sprawdź pogodę" | Prędkość wiatru                                | 1         |
+| 20 | Okno nr 4  "sprawdź pogodę" | Zachmrzenie                                    | 1         |
+| 23 | Okno nr 4  "sprawdź pogodę" | Ciśnienie                                      | 1         |
+| 14 | Okno nr 4  "sprawdź pogodę" | Widoczność                                     | 2         |
+| 16 | Okno nr 4  "sprawdź pogodę" | Temperatura odczuwalna                         | 2         |
+| 17 | Okno nr 4  "sprawdź pogodę" | Wilgotność                                     | 2         |
+| 21 | Okno nr 4  "sprawdź pogodę" | Indeks UV                                      | 2         |
+| 22 | Okno nr 4  "sprawdź pogodę" | Wysokość fal                                   | 2         |
+| 24 | Okno nr 4  "sprawdź pogodę" | Ikonki przy warkunkach pogodowych              | 2         |
+| 25 | Ikonka powrotu w każdym     | Powrot do poprzedniej strony "custom button"   | 3         |
+| 26 | Dziennik z plywania         | Dziennik z plywania                            | 3         |
 
 ### **Wymagania niefunkcjonalne**			
 
-| **Id** | **Nazwa**                                      | **Opis**                                         | **Priorytet**     |
-|----|--------------------|-------------------------------------------------|---------------|
-| 1  | Baza danych        | Baza danych Firebase                            | 3-opcjonalne  |
-| 2  | Adroid             | Aplikacja napisana w Androidzie                 | 1- wymagane   |
-| 3  | Google Play        | Aplikacja dostępna w Google Play                | 1- wymagane   |
-| 4  | iOS                | Aplikacja dostępna na iPhona                    | 3-opcjonalne  |
-| 5  | Łatwość użycia     | Przyjazny interfejs dla użytkownika             | 1- wymagane   |
-| 6  | Wersja angielska   | Wersja angielska                                | 1- wymagane   |
-| 7  | Wersja polska      | Wersja polska                                   | 2-przydatne   |
-| 8  | Wielu użytkowników | Wielu użytkowników może korzytsać jednocześnie  | 1- wymagane   |
+| Id | Nazwa              | Opis                                            | Priorytet |
+|----|--------------------|-------------------------------------------------|-----------|
+| 1  | Baza danych        | Baza danych Firebase                            | 3         |
+| 2  | Adroid             | Aplikacja napisana w Androidzie                 | 1         |
+| 3  | Google Play        | Aplikacja dostępna w Google Play                | 2         |
+| 4  | iOS                | Aplikacja dostępna na iPhona                    | 2         |
+| 5  | Łatwość użycia     | Przyjazny interfejs dla użytkownika             | 1         |
+| 6  | Wersja angielska   | Wersja angielska                                | 2         |
+| 7  | Wersja polska      | Wersja polska                                   | 1         |
+| 8  | Wielu użytkowników | Wielu użytkowników może korzytsać jednocześnie  | 1         |
 
 ### Architektura systemu i oprogramowania 
 
@@ -417,6 +432,8 @@ switch (weather) {
                     }
 
 ```
+### Testy
+
 
 ## Ilustracje
 
