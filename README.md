@@ -432,9 +432,22 @@ switch (weather) {
                     }
 
 ```
-### Testy
+## Testy
+
+### Scenariusze testowe
 ![image](https://user-images.githubusercontent.com/35393983/119186491-74010d80-ba78-11eb-982d-a12bfbd2189c.png)
+
+### Przypadki testowe
 ![image](https://user-images.githubusercontent.com/35393983/119186916-e376fd00-ba78-11eb-8dc6-853a286ea6e6.png)
+
+### Sprawozdanie z wykonania scenariuszy testów.
+
+Opis zakresu i sposobu realizacji testów scenariuszowych potwierdzających spełnienie wymagań funkcjonalnych Systemu, z odwołaniem do przypadków testowych ujętych w Scenariuszach Testów.
+
+Opis osiągniętych rezultatów – Tabela wyników testów :
+
+
+![image](https://user-images.githubusercontent.com/35393983/119191071-78c8c000-ba7e-11eb-9c28-e3a2b83b9e05.png)
 
 
 ## Ilustracje
