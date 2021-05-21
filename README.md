@@ -80,14 +80,14 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 
 | Id | Nazwa              | Opis                                            | Priorytet |
 |----|--------------------|-------------------------------------------------|-----------|
-| 1  | Baza danych        | Baza danych Firebase                            | 3         |
 | 2  | Adroid             | Aplikacja napisana w Androidzie                 | 1         |
-| 3  | Google Play        | Aplikacja dostępna w Google Play                | 2         |
-| 4  | iOS                | Aplikacja dostępna na iPhona                    | 2         |
 | 5  | Łatwość użycia     | Przyjazny interfejs dla użytkownika             | 1         |
-| 6  | Wersja angielska   | Wersja angielska                                | 2         |
 | 7  | Wersja polska      | Wersja polska                                   | 1         |
 | 8  | Wielu użytkowników | Wielu użytkowników może korzytsać jednocześnie  | 1         |
+| 3  | Google Play        | Aplikacja dostępna w Google Play                | 2         |
+| 4  | iOS                | Aplikacja dostępna na iPhona                    | 2         |
+| 6  | Wersja angielska   | Wersja angielska                                | 2         |
+| 1  | Baza danych        | Baza danych Firebase                            | 3         |
 
 ### Architektura systemu i oprogramowania 
 
