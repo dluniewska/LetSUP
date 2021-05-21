@@ -3,8 +3,11 @@
 
 ## Spis treści 
 * [Wprowadzenie](#wprowadzenie)
-* [Technologie](#technologie)
-* [Zakres funkcjonalności](#zakres-funkcjonalności)
+* [Prawa autorskie](#prawa-autorskie)
+* [Specyfikacja wymagań](#specyfikacja-wymagań)
+* [Architektura systemu i oprogramowania](#architektura-systemu-i-oprogramowania)
+* [Zakres wdrożonych funkcjonalności](#zakres-wdrożonych-funkcjonalności)
+* [Przykład kodu dla funkcjonalności](#przykład-kodu-dla-funkcjonalności)
 * [Ilustracje](#ilustracje)
 
 ## Wprowadzenie 
@@ -22,7 +25,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 **Uzasadnienie:** Jako zespół zdecydowałyśmy się na licencję wolnego oprogramowania. Licencja CPL jest podobna do znanej licencji GPL, jednakże zakazuje wykorzystania kodu źródłowego w taki sposób, aby korzystać z niego w sposób komercyjny i czerpać z niego korzyści finansowe. 
 
 **Autorzy:**
-1. Daria Łuniewsk
+1. Daria Łuniewska
 2. Natalia Gościnna
 3. Paulina Ciach
 
@@ -32,32 +35,8 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
     <em>Powyższa formuła dodana została do wszystkich klas i widoków</em>
 </p>
 
-## Technologie
-**Projekt jest stworzony z wykorzystaniem:**
-* Android 11.0
-* Java 8
-* OpenWeatherMap API
-* HTML5
-* JSON
-* biblioteka HTTP Volley
 
-## Zakres funkcjonalności 
-
-
-### **Kamery na żywo**
-* lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
-* po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
-* filtrowanie i wyszukiwanie lokalizacji po nazwie
-
-
-### **Pogoda dla wybranej lokalizacji**
-* wyświetlenie lokalizacji dla wprowadzonego miasta
-
-### **Pogoda dla aktualnej lokalizacji użytkownika**
-* pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji
-* Zmiana tła stosownie do aktualnej pogody
-* załadowania pogody dla aktualnej lokalizacji
-
+## Specyfikacja wymagań
 ### **Wymagania funkcjonalne**			
 
 | **Id** | **Nazwa**                                      | **Opis**                                         | **Priorytet**     |
@@ -94,10 +73,35 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 | 7  | Wersja polska      | Wersja polska                                   | 2-przydatne   |
 | 8  | Wielu użytkowników | Wielu użytkowników może korzytsać jednocześnie  | 1- wymagane   |
 
+### Architektura systemu i oprogramowania 
+
+**Architektura rozwoju:**
+* Android 11.0
+* Java 8
+* OpenWeatherMap API
+* HTML5
+* JSON
+* biblioteka HTTP Volley
+
+**Architektura uruchomieniowa:**
+* Android Studio z narzędziem Android Studio emulator
+* Java JDK
+
+## Zakres wdrożonych funkcjonalności
+
+### **Kamery na żywo**
+* lista lokalizacji z kamerami na żywo podzielona w sekcje np. Trójmiasto zawiera kamery z Gdyni, Spotu, Gdańska
+* po wybraniu lokalizacji jest właczany stream z kamery poprzez WebView -> na portalu właściciela
+* filtrowanie i wyszukiwanie lokalizacji po nazwie
 
 
+### **Pogoda dla wybranej lokalizacji**
+* wyświetlenie lokalizacji dla wprowadzonego miasta
 
-
+### **Pogoda dla aktualnej lokalizacji użytkownika**
+* pobranie lokalizacji (miasta) urzadzenia do zmiennej w celu załadowania pogody dla aktualnej lokalizacji
+* Zmiana tła stosownie do aktualnej pogody
+* załadowania pogody dla aktualnej lokalizacji
 
 
 ## Przykład kodu dla funkcjonalności 
