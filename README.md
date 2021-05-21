@@ -433,6 +433,7 @@ switch (weather) {
 
 ```
 ## Testy
+**Aby obejrzeć scenariusze i przypadki testowe oraz sprawozdanie z wykonanych scenariuszy należy kliknąć obrazek, aby wyświetlił się w dobrej rozdzielczości.**
 
 ### Scenariusze testowe
 ![image](https://user-images.githubusercontent.com/35393983/119186491-74010d80-ba78-11eb-982d-a12bfbd2189c.png)
@@ -482,4 +483,9 @@ Opis osiągniętych rezultatów – Tabela wyników testów :
     <br>
     <em>Fig. 6: Lista z kamerami. Filtrowanie listy. Widok z kamery. </em>
 </p>
+
+## Wideo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dZJmSyY4YWs/0.jpg)](https://www.youtube.com/watch?v=dZJmSyY4YWs)
+
+
 
