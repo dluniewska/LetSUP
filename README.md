@@ -433,6 +433,8 @@ switch (weather) {
 
 ```
 ### Testy
+![image](https://user-images.githubusercontent.com/35393983/119186491-74010d80-ba78-11eb-982d-a12bfbd2189c.png)
+![image](https://user-images.githubusercontent.com/35393983/119186916-e376fd00-ba78-11eb-8dc6-853a286ea6e6.png)
 
 
 ## Ilustracje
