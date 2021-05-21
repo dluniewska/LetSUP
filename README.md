@@ -8,7 +8,7 @@
 * [Architektura systemu i oprogramowania](#architektura-systemu-i-oprogramowania)
 * [Zakres wdrożonych funkcjonalności](#zakres-wdrożonych-funkcjonalności)
 * [Przykład kodu dla funkcjonalności](#przykład-kodu-dla-funkcjonalności)
-* [Testy](testy)
+* [Testy](#testy)
 * [Ilustracje](#ilustracje)
 * [Wideo](#wideo)
 
