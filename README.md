@@ -102,6 +102,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 **Architektura uruchomieniowa:**
 * Android Studio z narzędziem Android Studio emulator
 * Java JDK
+* Urządzenie mobilne z oprogramowaniem Android
 
 ## Zakres wdrożonych funkcjonalności
 
