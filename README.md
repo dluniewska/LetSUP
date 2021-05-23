@@ -74,7 +74,7 @@ Dzięki aplikacji dowiesz się jaka jest aktualna temperatura, wody, powietrza, 
 | 22 | Okno nr 4  "sprawdź pogodę" | Wysokość fal                                   | 2         |
 | 24 | Okno nr 4  "sprawdź pogodę" | Ikonki przy warkunkach pogodowych              | 2         |
 | 25 | Ikonka powrotu w każdym     | Powrot do poprzedniej strony "custom button"   | 3         |
-| 26 | Dziennik z plywania         | Dziennik z plywania                            | 3         |
+| 26 | Dziennik z plywania         | Dziennik z pływania                            | 3         |
 
 ### **Wymagania niefunkcjonalne**			
 
